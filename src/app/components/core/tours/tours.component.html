@@ -1,0 +1,81 @@
+<section class="admin-dashboard">
+    <h2>Tours</h2>
+    <!-- Dashboard content -->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Manage Tours</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- Tour management form -->
+        <form (ngSubmit)="createTour()" class="admin-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" placeholder="Tour Name" [(ngModel)]="tourForm.name" [ngModelOptions]="{ standalone: true }" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Destination</mat-label>
+            <input matInput type="text" placeholder="Destination" [(ngModel)]="tourForm.destination" [ngModelOptions]="{ standalone: true }" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Duration</mat-label>
+            <input matInput type="number" placeholder="Duration (in days)" [(ngModel)]="tourForm.duration" [ngModelOptions]="{ standalone: true }" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" placeholder="Price" [(ngModel)]="tourForm.price" [ngModelOptions]="{ standalone: true }" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Tour Type</mat-label>
+            <input matInput type="text" placeholder="Tour Type" [(ngModel)]="tourForm.tourType" [ngModelOptions]="{ standalone: true }" required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" id="create">Create Tour</button>
+        </form>
+  
+<!-- Tour list as a table -->
+<table mat-table [dataSource]="tours" class="mat-elevation-z8">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let tour">{{ tour.name }}</td>
+  </ng-container>
+
+  <!-- Destination Column -->
+  <ng-container matColumnDef="destination">
+    <th mat-header-cell *matHeaderCellDef>Destination</th>
+    <td mat-cell *matCellDef="let tour">{{ tour.destination }}</td>
+  </ng-container>
+
+  <!-- Duration Column -->
+  <ng-container matColumnDef="duration">
+    <th mat-header-cell *matHeaderCellDef>Duration (days)</th>
+    <td mat-cell *matCellDef="let tour">{{ tour.duration }}</td>
+  </ng-container>
+
+  <!-- Price Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price ($)</th>
+    <td mat-cell *matCellDef="let tour">{{ tour.price }}</td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let tour">
+      <button mat-icon-button id="bi">
+        <mat-icon id="update">edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" id="bi" (click)="deleteTour(tour.id)">
+        <mat-icon id="delete">delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+      </mat-card-content>
+    </mat-card>
+  </section>
+  

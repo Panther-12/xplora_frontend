@@ -1,0 +1,34 @@
+<!-- src/app/components/tour/tour-list.component.html -->
+<div *ngIf="tours && tours.length > 0" class="tour-list">
+  <h2>Available Tours</h2>
+  <div class="search-filter-bar">
+    <!-- <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Search Tours</mat-label>
+      <input matInput (input)="onSearch($any($event.target).value)" placeholder="Search by name">
+    </mat-form-field> -->
+    <mat-form-field class="filter-field" appearance="outline">
+      <mat-label>Filter by Type</mat-label>
+      <mat-select (selectionChange)="onFilter($event.value)">
+        <mat-option *ngFor="let type of tourTypes" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="tour-cards">
+    <mat-card *ngFor="let tour of filteredTours" class="tour-card">
+      <img mat-card-image [src]="getRandomImage()" alt="{{ tour.name }}">
+      <mat-card-content>
+        <h3>{{ tour.name }}</h3>
+        <p>{{ tour.destination }}</p>
+        <p>Duration: {{ tour.duration }} days</p>
+        <p>Price: ${{ tour.price }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="bookTour(tour.id)" mat-raised-button color="primary">Book</button>
+        <button [routerLink]="['/userd/reviews', tour.id]" mat-raised-button color="accent">View Reviews</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<div *ngIf="!tours || tours.length === 0">
+  <p>No tours available.</p>
+</div>

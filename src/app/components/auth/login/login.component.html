@@ -1,0 +1,22 @@
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <div class="auth-form">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" id="email" name="email" [(ngModel)]="loginForm.email" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" id="password" name="password" [(ngModel)]="loginForm.password" required>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary">Login</button>
+    </form>
+    <div class="register-link">
+      <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+    </div>
+  </div>
+  <div class="auth-banner"></div>
+  </mat-card>
+</div>

@@ -1,0 +1,46 @@
+.home {
+    padding: 20px;
+    margin-left: 40%;
+    width: auto;
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    .cards {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+  
+      .card {
+        flex: 1;
+        min-width: 200px;
+      }
+  
+      .value {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  
+    .charts {
+      display: grid;
+      grid-template-columns: repeat(1fr, 2);
+      gap: 20px;
+  
+      .chart-card {
+        height: 300px;
+        width: auto;
+      }
+  
+      .chart-container {
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  

@@ -1,0 +1,40 @@
+<div class="auth-container">
+  <!-- <mat-toolbar class="logo-toolbar">
+    <span class="logo">
+      <mat-icon>home</mat-icon>
+      <span class="blue-x">X</span>
+      <span class="plora">PLORA</span>
+    </span>
+  </mat-toolbar> -->
+  <mat-card class="auth-card">
+    <div class="auth-form">
+      <h2>Register</h2>
+      <form (ngSubmit)="register()" class="form">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" id="name" name="name" [(ngModel)]="registerForm.name" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" id="email" name="email" [(ngModel)]="registerForm.email" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" id="password" name="password" [(ngModel)]="registerForm.password" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Role</mat-label>
+          <mat-select id="role" name="role" [(ngModel)]="registerForm.role" required>
+            <mat-option value="user">User</mat-option>
+            <mat-option value="admin">Admin</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Register</button>
+      </form>
+      <div class="register-link">
+        <p>Already have an account? <a routerLink="/login">Login here</a></p>
+      </div>
+    </div>
+    <div class="auth-banner"></div>
+  </mat-card>
+</div>

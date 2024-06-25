@@ -1,0 +1,34 @@
+<div *ngIf="bookings && bookings.length > 0" class="bookings-list">
+  <h2>Your Bookings</h2>
+  <table mat-table [dataSource]="bookings" class="mat-elevation-z8">
+    <ng-container matColumnDef="tour">
+      <th mat-header-cell *matHeaderCellDef>Tour</th>
+      <td mat-cell *matCellDef="let booking">{{ booking.tour.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="destination">
+      <th mat-header-cell *matHeaderCellDef>Destination</th>
+      <td mat-cell *matCellDef="let booking">{{ booking.tour.destination }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let booking">
+          <mat-chip [ngClass]="booking.status">{{ booking.status }}</mat-chip>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let booking">
+        <button (click)="cancelBooking(booking.id)" mat-button color="warn" [disabled]="booking.status !== 'confirmed'">Cancel</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+<div *ngIf="!bookings || bookings.length === 0">
+  <p>No bookings found.</p>
+</div>

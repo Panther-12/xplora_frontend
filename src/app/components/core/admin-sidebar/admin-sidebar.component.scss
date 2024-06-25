@@ -1,0 +1,97 @@
+.sidenav-container {
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+  }
+  
+  .mat-sidenav {
+    width: 310px; /* Adjust width as needed */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  // .mat-sidenav-content {
+  //   margin-left: 240px; /* Same width as sidenav */
+  // }
+  
+  .mat-toolbar {
+    background-color: #1976d2; /* Primary color */
+    color: white; /* Text color */
+    height: 64px; /* Height of toolbar */
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+  
+  .sidenav-header {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  
+  .content-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  
+  .mat-nav-list {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-nav-list .mat-list-item {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  .mat-nav-list .mat-list-item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  
+  .mat-nav-list .mat-list-item .mat-icon {
+    margin-right: 12px;
+  }
+  
+  .content {
+    padding: 20px;
+    height: calc(100vh - 64px); /* Adjust based on toolbar height */
+    overflow-y: auto; /* Scrollable content */
+  }
+  
+  /* Remove underline from links */
+  .mat-nav-list .mat-list-item a {
+    text-decoration: none;
+  }
+  
+  #menu {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin: 10px;
+  }
+
+  #menu-button {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin: 10px;
+  }
+
+  #close {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+  }
+  #close-button {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin-left: 10px;
+    margin-right: 5px;
+  }

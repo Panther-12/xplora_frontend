@@ -1,0 +1,51 @@
+.landing {
+  position: relative;
+  background: #f9f9f9;
+  padding: 60px 0;
+  text-align: center;
+  justify-items: center;
+  height: 100vh;
+  overflow: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .container {
+    z-index: 2;
+    position: relative;
+    margin-top: 30px;
+    color: #6c757d;
+  }
+
+  .btn {
+    margin: 30px 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+
+    &.btn-primary {
+      background-color: #007bff;
+      margin-top: 30px;
+    }
+
+    &.btn-secondary {
+      background-color: hsl(208, 7%, 46%);
+      margin-top: 30px;
+    }
+  }
+
+  .curve {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: crimson;
+    z-index: 1;
+    border-top-left-radius: 100% 50px;
+    border-top-right-radius: 100% 50px;
+  }
+}

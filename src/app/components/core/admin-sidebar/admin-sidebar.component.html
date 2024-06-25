@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="mat-sidenav">
+      <mat-toolbar color="primary">
+        <span class="sidenav-header">Xplora</span>
+        <button mat-icon-button (click)="sidenav.toggle()" id="close-button">
+          <mat-icon id="close">close</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-nav-list class="mat-nav-list">
+        <app-sidebar-link icon="home" label="Home" route="/admin/dashboard" class="mat-list-item "></app-sidebar-link>
+        <app-sidebar-link icon="tour" label="Tours" route="/admin/tours" class="mat-list-item "></app-sidebar-link>
+        <app-sidebar-link icon="people" label="Users" route="/admin/users" class="mat-list-item "></app-sidebar-link>
+        <app-sidebar-link icon="rate_review" label="Reviews" route="/admin/reviews" class="mat-list-item "></app-sidebar-link>
+        <app-sidebar-link icon="book" label="Bookings" route="/admin/bookings" class="mat-list-item "></app-sidebar-link>
+        <app-sidebar-link icon="logout" label="Logout" (click)="logout()" class="mat-list-item "></app-sidebar-link>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="mat-toolbar">
+        <button mat-icon-button (click)="sidenav.open()" id="menu-button">
+          <mat-icon id="menu">menu</mat-icon>
+        </button>
+        <span>Admin Dashboard</span>
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

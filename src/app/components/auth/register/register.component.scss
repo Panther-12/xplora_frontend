@@ -1,0 +1,52 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+.auth-card {
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.auth-form {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-banner {
+  flex: 1;
+  background: linear-gradient(135deg, #2196f3 0%, #21cbf3 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-link {
+  margin-top: 15px;
+  text-align: center;
+}

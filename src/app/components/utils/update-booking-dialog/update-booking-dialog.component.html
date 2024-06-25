@@ -1,0 +1,15 @@
+<h3 mat-dialog-title style="padding: 20px;">Update Booking</h3>
+<div mat-dialog-content>
+  <mat-form-field style="padding:10px;">
+    <mat-label>Status</mat-label>
+    <mat-select [(ngModel)]="status" name="status">
+      <mat-option *ngFor="let statusOption of statusOptions" [value]="statusOption">
+        {{ statusOption }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions style="padding:10px;">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSave()">Save</button>
+</div>
